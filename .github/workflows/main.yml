@@ -3,5 +3,4 @@ name: Test
 run: |
 javac HelloWorld.java
 
-run: |
 java HelloWorld
