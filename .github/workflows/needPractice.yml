@@ -1,0 +1,26 @@
+name: test
+on:
+  push:
+  
+  workflow_dispatch:
+  
+jobs:
+    
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      -  name: Compile
+         run: |
+            javac HelloWorld.java
+            java HelloWorld
+            
+  job2:
+   needs: job1
+   runs-on: ubuntu-latest
+   steps:
+      - uses: actions/checkout@v2
+      -  name: Exe
+         run: |
+            javac HelloWorld2.java
+            java HelloWorld2
